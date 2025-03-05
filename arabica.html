@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="arabica.css">
+	<style type="text/css">
+@import url('arabica.css');
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="container_1">
+            <section class="cart-container">
+                <div class="product-list">
+                    <h3>Product</h3>
+                    <div class="product-item">
+                        <img src="Arabica.jpg" alt="Arabica">
+                        <div class="product-details">
+                            <h4>Arabica</h4>
+                            <p id="productPrice">₹3000.00</p>
+                            <p>Pack Size: 250 gms</p>
+                            <div class="quantity">
+                                <button id="decrement">-</button>
+                                <span id="quantity">1</span>
+                                <button id="increment">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cart-total">
+                    <h3>Cart Total</h3>
+                    <form>
+                        <div class="coupon">
+                            <label for="coupon">Add a coupon</label>
+                            <select id="coupon">
+                                <option value="">Select Coupon</option>
+                            </select>
+                        </div>
+                        <div id="subtotal">
+                            <span>Subtotal</span>
+                            <span id="total">₹3000.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span>FREE</span>
+                        </div>
+                        <div class="summary-row" id="total">
+                            <span>Total</span>
+                            <span id="total_1">₹3000.00</span>
+                        </div>
+
+                        <!-- Updated Button -->
+                        <a href="payment.html" class="checkout-btn">Proceed to Payment</a>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="arabica.js"></script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Basket - Payment</title>
+    <style>
+        /* Basic reset and styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgba(230, 199, 199, 0.2);
+        }
+
+        .header {
+            background-color: #3f2525;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 200px;
+        }
+
+        .header h1 {
+            margin: 0 auto;
+            color: white;
+            font-size: 50px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .payment-box {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 40px;
+            width: 500px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-box h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+        }
+
+        .address-section {
+            margin-bottom: 20px;
+        }
+
+        .address-section h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+            color: #555;
+        }
+
+        .address-section select, .address-section textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .personal-info-section {
+            margin-bottom: 20px;
+        }
+
+        .personal-info-section h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+            color: #555;
+        }
+
+        .personal-info-section input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .payment-method {
+            margin-bottom: 20px;
+        }
+
+        .payment-method label {
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .payment-method input {
+            margin-right: 10px;
+        }
+
+        .payment-details {
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .payment-details.active {
+            display: block;
+        }
+
+        .payment-details input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .payment-box button {
+            width: 100%;
+            padding: 12px;
+            background-color: #5a0b0b;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .payment-box button:hover {
+            background-color: #5a0b0b;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <h1>Bean Basket</h1>
+    </div>
+
+    <!-- Payment Container -->
+    <div class="container">
+        <div class="payment-box">
+            <!-- Address Section -->
+            <div class="address-section">
+                <h3>Select or Add Delivery Address</h3>
+                <select id="existing-address">
+                    <option value="" disabled selected>Select an existing address</option>
+                    <option value="1">ram rekha ghat, buxar, India</option>
+                    <option value="2">Kaliket Nagar,Patna India</option>
+                </select>
+                <textarea id="new-address" rows="4" placeholder="Enter new delivery address (e.g., house number, street, city, pin code)"></textarea>
+            </div>
+
+            <!-- Personal Information Section -->
+            <div class="personal-info-section">
+                <h3>Personal Information</h3>
+                <input type="text" id="user-name" placeholder="Full Name" required>
+                <input type="text" id="user-phone" placeholder="Phone Number" required>
+            </div>
+
+            <!-- Payment Section -->
+            <h2>Select Payment Method</h2>
+            <div class="payment-method">
+                <label>
+                    <input type="radio" name="payment" value="cod" checked> Cash on Delivery
+                </label>
+                <label>
+                    <input type="radio" name="payment" value="card"> Debit/Credit Card
+                </label>
+                <label>
+                    <input type="radio" name="payment" value="upi"> UPI
+                </label>
+            </div>
+
+            <!-- Card Payment Details -->
+            <div class="payment-details" id="card-details">
+                <h3>Card Details</h3>
+                <input type="text" placeholder="Card Number" required>
+                <input type="text" placeholder="Name on Card" required>
+                <input type="text" placeholder="MM/YY" required>
+                <input type="text" placeholder="CVV" required>
+            </div>
+
+            <!-- UPI Payment Details -->
+            <div class="payment-details" id="upi-details">
+                <h3>UPI Details</h3>
+                <input type="text" placeholder="Enter UPI ID (e.g., yourname@bank)" required>
+            </div>
+            <a href="order_confirm.html">
+            <button id="proceed-to-pay" type="button">Confirm Order</button>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Address Selection Logic
+        const addressDropdown = document.getElementById("existing-address");
+        const newAddressField = document.getElementById("new-address");
+        const userNameField = document.getElementById("user-name");
+        const userPhoneField = document.getElementById("user-phone");
+        const proceedToPayBtn = document.getElementById("proceed-to-pay");
+    
+        function validateForm() {
+            const selectedAddress = addressDropdown.value || newAddressField.value.trim();
+            const userName = userNameField.value.trim();
+            const userPhone = userPhoneField.value.trim();
+    
+            if (!selectedAddress) {
+                alert("Please select or add a delivery address.");
+                return false;
+            }
+            if (!userName) {
+                alert("Please enter your full name.");
+                return false;
+            }
+            if (!userPhone) {
+                alert("Please enter your phone number.");
+                return false;
+            }
+            if (userPhone.length !== 10 || isNaN(userPhone)) {
+                alert("Please enter a valid 10-digit phone number.");
+                return false;
+            }
+    
+            alert("Form submitted successfully!");
+            return true;
+        }
+    
+        proceedToPayBtn.addEventListener("click", (event) => {
+            if (!validateForm()) {
+                event.preventDefault(); // Prevents navigation if form validation fails
+            }
+        });
+    </script>
+    
+</body>
+</html>

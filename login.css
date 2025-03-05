@@ -1,0 +1,158 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f4d7d0e5; /* Light background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 900px;
+    height: 550px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Sign In Section */
+.form-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    text-align: center;
+}
+
+.sign-in-container {
+    background-color: #ffffff;
+}
+
+.sign-in-container h1 {
+    font-size: 24px;
+    color: #6c2b2b; /* Maroon */
+    margin-bottom: 10px; /* Reduced margin below heading */
+}
+
+.social-container {
+    margin: 10px 0; /* Reduced margin above and below */
+    display: flex;
+    gap: 10px; /* Controls spacing between logos */
+}
+
+.social-container a {
+    border: 1px solid #6c2b2b;
+    border-radius: 50%;
+    padding: 10px;
+    color: #6c2b2b;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-container a:hover {
+    background: #6c2b2b;
+    color: #fff;
+}
+
+span {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+input[type="email"]:focus, input[type="password"]:focus {
+    border: 1px solid #6c2b2b;
+}
+
+button {
+    background-color: #6c2b2b;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #e07a00; /* Yellow */
+    color: #6c2b2b;
+}
+
+/* Forgot Password */
+a {
+    font-size: 12px;
+    color: #6c2b2b;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Sign Up Section */
+.sign-up-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background:#3f2525 ;
+    color: #fff;
+    text-align: center;
+}
+
+.sign-up-container h1 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.sign-up-container p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.btn-sign-up {
+    background-color: #fff;
+    color: #3f2525;
+    border: 2px solid #3f2525;
+    padding: 12px 25px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-sign-up:hover {
+    background-color: #e07a00;
+    color: #3f2525;
+    border-color: #e07a00;
+}

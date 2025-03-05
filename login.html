@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup Form</title>
+    <link rel="stylesheet" href="login.css">
+    <script type="module" src="login.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<style type="text/css">
+@import url('login.css');
+</style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sign In Section -->
+        <div class="form-container sign-in-container">
+            <h1>Sign In</h1>
+            <div class="social-container">
+                <a href="https://www.facebook.com/login/" class="fab fa-facebook-f"></a>
+                <a href="https://accounts.google.com/v3/signin/identifier?authuser=0&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ec=GAlAFw&hl=en&service=mail&flowName=GlifWebSignIn&flowEntry=AddSession&dsh=S1880131590%3A1732779771975520&ddm=1" class="fab fa-google"></a>
+                <!-- <a href="#" class="fab fa-linkedin-in"></a> -->
+            </div>
+            <span>or use your account</span>
+            <input type="email" placeholder="Email" id="email1">
+            <input type="password" placeholder="Password" id="password1">
+            <a href="#">Forgot Your Password?</a>
+            <button id="signIn">Sign In</button>
+            <button id="logout"> Log Out</button>
+        </div>
+        
+        <!-- Sign Up Section -->
+        <div class="form-container sign-up-container">
+            <h1>Welcome!</h1>
+            <p>Enter your details and start your journey with us</p>
+            <input type="email" placeholder="Email" id="email2">
+            <input type="password" placeholder="Password" id="password2">
+            <button id="signUp" class="btn-sign-up">Sign Up</button>
+        </div>
+    </div>
+</body>
+</html>

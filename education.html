@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery Page with Descriptions</title>
+  <style>
+    /* General styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      background-color:#f4d7d0e5;
+      /* top:50px; */
+    }
+
+    /* Grid container for photos and descriptions */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      width: 100%;
+      margin-top: 120px;
+    }
+
+    /* Individual photo item styling */
+    .photo-item {
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .photo-item img {
+      width: 100%;
+      border-radius: 10px;
+      max-height: 200px;
+      object-fit: cover;
+    }
+
+    .photo-item p {
+      margin-top: 10px;
+      color: #555;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="gallery">
+    <!-- Photo 1 -->
+    <div class="photo-item">
+      <img src="1st coffee.jpg" alt="Photo 1">
+      <p>The flavours of Arabica coffee can be different depending on the type of bean and roast that you buy. The most common Arabica coffee has a slightly sweet flavour accompanied by hints of chocolate, caramel and nuts. A hint of fruit and berries can be present as well as a slight acidity and a little bitterness. The flavours of the coffee beans can be preserved better by storing the coffee beans properly and cold brewing coffee can help bring out the sweeter flavours more..</p>
+    </div>
+
+    <!-- Photo 2 -->
+    <div class="photo-item">
+      <img src="coffee 2.jpg" alt="Photo 2">
+      <p>Liberica is another species of coffee plant. Unlike Arabica or Robusta, Liberica coffee beans don’t enjoy the same worldwide popularity and make up just 1.5% of global coffee production. Essentially all Liberica production comes from Southeast Asia, specifically the Philippines, Malaysia and Indonesia. .</p>
+    </div>
+
+    <!-- Photo 3 -->
+    <div class="photo-item">
+      <img src="coffee 3.jpg" alt="Photo 3">
+      <p> Robusta Coffee is coffee made from the beans of the Coffea canephora plant, the origins of which are in Africa. Robusta coffee is notoriously bitter and is used primarily in instant coffee, espresso, and as a filler in certain blends of ground coffee..</p>
+    </div>
+
+    <!-- Photo 4 -->
+    <div class="photo-item">
+      <img src="coffee 4.jpg" alt="Photo 4">
+      <p>First discovered in 1903 in Central Africa, it was believed to be its own genus of coffee. However, in 2006 it was reclassified as a variety of the Liberica coffee bean species. Both coffee bean types grow on trees towering at least 20 feet tall, grow at similar altitudes, and have an almond shape.</p>
+    </div>
+  </div>
+
+</body>
+</html>
